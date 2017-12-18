@@ -1,6 +1,7 @@
 package com.inabaweather.android.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.inabaweather.android.db.City;
 import com.inabaweather.android.db.County;
@@ -27,6 +28,7 @@ public class Utility {
                     Province province = new Province();
                     province.setProvinceName(provinceObject.getString("name"));
                     province.setProvinceCode(provinceObject.getInt("id"));
+                    province.save();
                 }
                 return true;
             } catch (JSONException e) {
